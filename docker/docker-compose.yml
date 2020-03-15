@@ -8,5 +8,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - "../src:/work"
+      - "../templates:/templates"
+    ports:
+      - 8080:8080
     working_dir: '/work'
-    command: echo 'hello'
+    command: go run main.go
