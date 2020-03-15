@@ -1,17 +1,14 @@
 package main
 
-import (
-    "github.com/gin-gonic/gin"
-)
-
+import "github.com/gin-gonic/gin"
 
 func main() {
-    router := gin.Default()
-    router.LoadHTMLGlob("/templates/*.html")
-
-    router.GET("/", func(ctx *gin.Context){
-        ctx.HTML(200, "index.html", gin.H{})
+    r := gin.Default()
+    r.GET("/ping", func(c *gin.Context) {
+        c.JSON(200, gin.H{
+            "message": "ping",
+        })
     })
-
-    router.Run()
+    // ポートを設定しています。
+    r.Run(":8080")
 }
