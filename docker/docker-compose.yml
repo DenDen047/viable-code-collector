@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  app:
+    image: denden047/viable-code-collector:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "../src:/work"
+    working_dir: '/work'
