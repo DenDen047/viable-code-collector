@@ -9,3 +9,4 @@ services:
     volumes:
       - "../src:/work"
     working_dir: '/work'
+    command: echo 'hello'
